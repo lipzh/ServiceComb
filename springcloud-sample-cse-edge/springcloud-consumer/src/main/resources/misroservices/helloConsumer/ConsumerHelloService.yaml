@@ -1,0 +1,51 @@
+swagger: 2.0
+info:
+  version: 1.0.0
+  title: swagger definition for io.consumer.ConsumerHelloService
+  x-java-interface: io.consumer.ConsumerHelloService
+basePath: /hello
+consumes:
+ - application/json
+produces:
+ - application/json
+paths:
+  /compute:
+    post:
+      operationId: compute
+      parameters: []
+      responses:
+        200:
+          description: 正常返回
+          schema:
+            type: string
+        
+  /dynamicProperty:
+    get:
+      operationId: dynamicProperty
+      parameters: []
+      responses:
+        200:
+          description: 正常返回
+          schema:
+            type: string
+        default:
+          description: 默认返回
+          schema:
+            type: string
+  /:
+    get:
+      operationId: hello
+      parameters:
+      - name: name
+        in: query
+        required: false
+        type: string
+      responses:
+        200:
+          description: 正常返回
+          schema:
+            type: string
+        default:
+          description: 默认返回
+          schema:
+            type: string

@@ -1,0 +1,25 @@
+# CSE RPC 的配置项
+# 应用名称
+APPLICATION_ID: spring-cloud-application-cse-rpc
+# 微服务名称和版本号，微服务名称使用Spring Cloud的名称
+service_description:
+  name: helloPerformance
+  version: 1.0.0
+# 服务中心和配置中心的地址
+servicecomb:
+  service:
+    registry:
+      address: http://192.168.99.100:30100
+      autodiscovery: false
+# 对外发布的地址，端口号使用server.port
+  rest:
+    address: 0.0.0.0:7113
+cse:
+  dynamic:
+    property: hello
+# 打开metrics，统计性能
+  metrics:
+    publisher:
+      defaultLog:
+        enabled: true
+    window_time: 15000

@@ -1,0 +1,151 @@
+#使用显式契约
+swagger: 2.0
+info:
+  version: 1.0.0
+  title: swagger definition for io.provider.ComputeImp
+  x-java-interface: io.provider.ComputeImp
+basePath: /ComputeImp
+produces:
+ - application/json
+paths:
+  /add:
+    get:
+      operationId: add
+      parameters:
+        - name: num1
+          in: query
+          required: true
+          type: integer
+          format: int32
+        - name: num2
+          in: query
+          required: true
+          type: integer
+          format: int32
+      responses: 
+        200:
+          description: 正常返回
+          schema: 
+            type: integer
+            format: int32
+        default:
+          description: 默认返回
+          schema:
+            type: integer
+            format: int32
+  /Multiplication:
+    get:
+      operationId: Multiplication
+      parameters:
+        - name: num1
+          in: query
+          required: true
+          type: integer
+          format: int32
+        - name: num2
+          in: query
+          required: true
+          type: integer
+          format: int32
+      responses: 
+        200:
+          description: 正常返回
+          schema: 
+            type: integer
+            format: int32
+        default:
+          description: 默认返回
+          schema:
+            type: integer
+            format: int32
+  /Division:
+    get:
+      operationId: Division
+      parameters:
+        - name: num1
+          in: query
+          required: true
+          type: integer
+          format: int32
+        - name: num2
+          in: query
+          required: true
+          type: integer
+          format: int32
+      responses: 
+        200:
+          description: 正常返回
+          schema: 
+            type: integer
+            format: int32
+        default:
+          description: 默认返回
+          schema:
+            type: integer
+            format: int32
+  /Reducing:
+    post:
+      operationId: Reducing
+      parameters:
+        - name: num1
+          in: query
+          required: true
+          type: integer
+          format: int32
+        - name: num2
+          in: query
+          required: true
+          type: integer
+          format: int32
+      responses: 
+        200:
+          description: 正常返回
+          schema: 
+            type: integer
+            format: int32
+        default:
+          description: 默认返回
+          schema:
+            type: integer
+            format: int32
+definitions:
+  DivisionBody:
+    type: object
+    properties:
+      num1:
+        type: integer
+        format: int32
+      num2:
+        type: integer
+        format: int32
+    x-java-class: io.provider.compute.DivisionBody
+  MultiplicationBody:
+    type: object
+    properties:
+      num1:
+        type: integer
+        format: int32
+      num2:
+        type: integer
+        format: int32
+    x-java-class: io.provider.compute.MultiplicationBody
+  ReducingBody:
+    type: object
+    properties:
+      num1:
+        type: integer
+        format: int32
+      num2:
+        type: integer
+        format: int32
+    x-java-class: io.provider.compute.ReducingBody
+  addBody:
+    type: object
+    properties:
+      num1:
+        type: integer
+        format: int32
+      num2:
+        type: integer
+        format: int32
+    x-java-class: io.provider.compute.addBody
